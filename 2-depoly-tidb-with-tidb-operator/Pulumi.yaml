@@ -1,0 +1,6 @@
+name: 1-create-an-eks-cluster
+runtime: nodejs
+description: |
+  Step 1: Create an EKS cluster.
+backend:
+  url: file://~/.pulumi

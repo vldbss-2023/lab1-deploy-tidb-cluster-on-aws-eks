@@ -32,3 +32,4 @@ coverage.*
 node_modules
 .cache
 .ticat
+kubeconfig.yaml
