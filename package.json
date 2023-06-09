@@ -1,0 +1,23 @@
+{
+  "name": "clinic-cd",
+  "devDependencies": {
+    "@types/node": "^16",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1"
+  },
+  "dependencies": {
+    "@pulumi/aws": "~5.30.0",
+    "@pulumi/awsx": "~1.0.2",
+    "@pulumi/eks": "^1.0.2",
+    "@pulumi/kubernetes": "~3.29.0",
+    "@pulumi/pulumi": "~3.55.0",
+    "@pulumi/random": "~4.11.2",
+    "axios": "~1.2.5",
+    "fs": "~0.0.2",
+    "js-yaml": "~4.1.0",
+    "random": "~4.1.0",
+    "yaml": "~2.2.1"
+  }
+}

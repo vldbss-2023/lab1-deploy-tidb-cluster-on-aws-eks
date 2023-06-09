@@ -1,0 +1,11 @@
+apiVersion: pingcap.com/v1alpha1
+kind: TidbDashboard
+metadata:
+  name: basic
+spec:
+  baseImage: pingcap/tidb-dashboard
+  version: latest
+  clusters:
+    - name: basic
+  requests:
+    storage: 1Gi
