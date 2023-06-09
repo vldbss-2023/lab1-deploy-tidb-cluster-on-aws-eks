@@ -1,5 +1,7 @@
 # Step 3: Explore TiDB basic usage
 
+The following steps guides you the basic usage of a newly deployed TiDB cluster. It takes about 10 minutes to complete.
+
 > - Please make sure you have completed [Step 1: Create an EKS cluster](../1-create-an-eks-cluster/README.md) and use *
     *_the same shell session_** before proceeding.
 > - If you have closed the shell session, please run `export KUBECONFIG=$PWD/../1-create-an-eks-cluster/kubeconfig.yaml`
@@ -41,7 +43,7 @@
 
 4. Access TiDB cluster via MySQL client
 
-    In another shell session, run:
+   In another shell session, run:
 
     ```bash
     $ mysql --comments -h 127.0.0.1 -P 4000 -u root
@@ -74,54 +76,54 @@
         1 row in set (0.03 sec)
         ```
 
-   2. Query the TiDB version
+    2. Query the TiDB version
 
-       ```bash
-       mysql> select tidb_version()\G
-       *************************** 1. row ***************************
-                tidb_version(): Release Version: v7.1.0
-                       Edition: Community
-               Git Commit Hash: 635a4362235e8a3c0043542e629532e3c7bb2756
-                    Git Branch: heads/refs/tags/v7.1.0
-                UTC Build Time: 2023-05-30 10:58:57
-                     GoVersion: go1.20.3
-                  Race Enabled: false
-              TiKV Min Version: 6.2.0-alpha
-       Check Table Before Drop: false
-                         Store: tikv
-       1 row in set (0.01 sec)
-       ```
+        ```bash
+        mysql> select tidb_version()\G
+        *************************** 1. row ***************************
+                 tidb_version(): Release Version: v7.1.0
+                        Edition: Community
+                Git Commit Hash: 635a4362235e8a3c0043542e629532e3c7bb2756
+                     Git Branch: heads/refs/tags/v7.1.0
+                 UTC Build Time: 2023-05-30 10:58:57
+                      GoVersion: go1.20.3
+                   Race Enabled: false
+               TiKV Min Version: 6.2.0-alpha
+        Check Table Before Drop: false
+                          Store: tikv
+        1 row in set (0.01 sec)
+        ```
 
-   3. Query the TiDB cluster information
+    3. Query the TiDB cluster information
 
-       ```bash
-       mysql> select * from information_schema.cluster_info\G
-       *************************** 1. row ***************************
-                 TYPE: tidb
-             INSTANCE: basic-tidb-0.basic-tidb-peer.default.svc:4000
-       STATUS_ADDRESS: basic-tidb-0.basic-tidb-peer.default.svc:10080
-              VERSION: 7.1.0
-             GIT_HASH: 635a4362235e8a3c0043542e629532e3c7bb2756
-           START_TIME: 2023-06-09T04:39:33Z
-               UPTIME: 1h28m2.256186392s
-            SERVER_ID: 3072852
-       *************************** 2. row ***************************
-                 TYPE: pd
-             INSTANCE: basic-pd-0.basic-pd-peer.default.svc:2379
-       STATUS_ADDRESS: basic-pd-0.basic-pd-peer.default.svc:2379
-              VERSION: 7.1.0
-             GIT_HASH: 1ff614d90412396c9ebaad76a30d31e683c34adc
-           START_TIME: 2023-06-09T04:37:59Z
-               UPTIME: 1h29m36.256191795s
-            SERVER_ID: 0
-       *************************** 3. row ***************************
-                 TYPE: tikv
-             INSTANCE: basic-tikv-0.basic-tikv-peer.default.svc:20160
-       STATUS_ADDRESS: basic-tikv-0.basic-tikv-peer.default.svc:20180
-              VERSION: 7.1.0
-             GIT_HASH: 0c34464e386940a60f2a2ce279a4ef18c9c6c45b
-           START_TIME: 2023-06-09T04:38:45Z
-               UPTIME: 1h28m50.256194511s
-            SERVER_ID: 0
-       3 rows in set (0.22 sec)
-       ```
+        ```bash
+        mysql> select * from information_schema.cluster_info\G
+        *************************** 1. row ***************************
+                  TYPE: tidb
+              INSTANCE: basic-tidb-0.basic-tidb-peer.default.svc:4000
+        STATUS_ADDRESS: basic-tidb-0.basic-tidb-peer.default.svc:10080
+               VERSION: 7.1.0
+              GIT_HASH: 635a4362235e8a3c0043542e629532e3c7bb2756
+            START_TIME: 2023-06-09T04:39:33Z
+                UPTIME: 1h28m2.256186392s
+             SERVER_ID: 3072852
+        *************************** 2. row ***************************
+                  TYPE: pd
+              INSTANCE: basic-pd-0.basic-pd-peer.default.svc:2379
+        STATUS_ADDRESS: basic-pd-0.basic-pd-peer.default.svc:2379
+               VERSION: 7.1.0
+              GIT_HASH: 1ff614d90412396c9ebaad76a30d31e683c34adc
+            START_TIME: 2023-06-09T04:37:59Z
+                UPTIME: 1h29m36.256191795s
+             SERVER_ID: 0
+        *************************** 3. row ***************************
+                  TYPE: tikv
+              INSTANCE: basic-tikv-0.basic-tikv-peer.default.svc:20160
+        STATUS_ADDRESS: basic-tikv-0.basic-tikv-peer.default.svc:20180
+               VERSION: 7.1.0
+              GIT_HASH: 0c34464e386940a60f2a2ce279a4ef18c9c6c45b
+            START_TIME: 2023-06-09T04:38:45Z
+                UPTIME: 1h28m50.256194511s
+             SERVER_ID: 0
+        3 rows in set (0.22 sec)
+        ```

@@ -1,5 +1,8 @@
 # Step 2: Deploy a TiDB cluster with TiDB Operator
 
+The following steps guides you through the process of scaling TiKV instance for a TiDB Operator managed cluster. It takes about
+10 minutes to complete.
+
 > - Please make sure you have completed [Step 1: Create an EKS cluster](../1-create-an-eks-cluster/README.md) and use *
     *_the same shell session_** before proceeding.
 > - If you have closed the shell session, please run `export KUBECONFIG=$PWD/../1-create-an-eks-cluster/kubeconfig.yaml`

@@ -47,14 +47,37 @@ such as:
 ## Pre-requisites
 
 - An AWS account
-- `[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)`: the standard Kubernetes command line interface.
+- [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/): the standard Kubernetes command line interface.
+- Node.js 16. Use nvm to [install Node.js 16](https://github.com/nvm-sh/nvm#installing-and-updating):
+
+  ```bash
+  $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  $ nvm install 16
+  ```
+
 - Basic knowledge of AWS, Kubernetes, RDBMS
-- VPN for connecting to AWS API
+- VPN for connecting to AWS API and GitHub
 
 ## Syllabus
 
-1. Create an EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md)
-2. Deploy TiDB with TiDB Operator [`2-deploy-tidb-with-tidb-operator`](./2-deploy-tidb-with-tidb-operator/README.md)
-3. Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
-4. Scale up TiDB cluster with TiDB
+1. Create a new GitHub repository base on [this template](https://github.com/vldbss-2023/lab1-deploy-tidb-cluster-on-aws-eks)
+   1. Clone the newly created repository
+   2. In the root directory of the repository, run `make install` to install the dependencies
+2. (30 min) Create an EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md)
+3. (10 min) Deploy TiDB with TiDB
+   Operator [`2-deploy-tidb-with-tidb-operator`](./2-deploy-tidb-with-tidb-operator/README.md)
+4. (10 min) Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
+5. (10 min) Scale up TiDB cluster with TiDB
    Operator [`4-scale-up-tidb-cluster-with-tidb-operator`](./4-scale-up-tidb-cluster-with-tidb-operator/README.md)
+
+---
+
+## AWS billing price
+
+This experiment will incur charges under the aws account, described in detail at
+
+- New EKS cluster control plane, **_1_** clusters x **_0.10_** USD per hour
+- Two EKS worker EC2 instances, **_2_** instances * **_0.0464_** USD per hour
+- 4 EBS of size 1 GiB, with negligible cost
+
+Total **_0.1928_** USD per hour.
