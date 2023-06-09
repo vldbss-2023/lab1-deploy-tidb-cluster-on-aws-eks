@@ -74,7 +74,7 @@ such as:
 
 ## AWS billing price
 
-This experiment will incur charges under the aws account, described in detail at: 
+This lab will incur charges under the aws account, described in detail at: 
 
 - New EKS cluster control plane, **_1_** cluster x **_0.10_** USD per hour
 - Two EKS worker EC2 `t2.medium` instances, **_2_** instances * **_0.0464_** USD per hour
