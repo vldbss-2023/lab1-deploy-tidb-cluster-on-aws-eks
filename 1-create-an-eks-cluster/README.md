@@ -1,7 +1,7 @@
-# Step 4: Scale up TiDB cluster with TiDB Operator
+# Step 1: Create an EKS cluster
 
-The following steps will guide you through the process of creating an EKS cluster on AWS. It takes about **_30_**
-minutes to complete.
+The following steps guide you through the process of creating an EKS cluster on AWS, with the help of Pulumi IaC
+framework. It takes about **_30_** minutes to complete.
 
 1. Set up AWS CLI
 
