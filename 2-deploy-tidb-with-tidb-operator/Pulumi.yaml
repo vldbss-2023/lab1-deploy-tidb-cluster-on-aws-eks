@@ -1,0 +1,6 @@
+name: 2-deploy-tidb-with-tidb-operator
+runtime: nodejs
+description: |
+  Step 2: Deploy a TiDB cluster with TiDB Operator
+backend:
+  url: file://~/.pulumi
