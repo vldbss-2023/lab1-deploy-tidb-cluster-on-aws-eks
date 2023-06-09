@@ -42,7 +42,7 @@ such as:
 - Understand basic usage of TiDB and AWS EKS
 - Deploy TiDB clusters on Kubernetes with TiDB Operator
 - Query TiDB statements history via TiDB Dashboard
-- Automate deployment process with GitHub Actions and Pulumi
+- Automate deployment process with Pulumi
 
 ## Pre-requisites
 
