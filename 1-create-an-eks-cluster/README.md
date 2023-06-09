@@ -51,11 +51,11 @@ The following steps will guide you through the process of creating an EKS cluste
 
     ```bash
     $ pulumi up
-    Updating (dev):
+    Updating (default):
 
-         Type                       Name                            Status
-    +   pulumi:pulumi:Stack        crosswalk-aws-dev               created
-    +   └─ eks:index:Cluster       my-cluster                      created
+         Type                      Name                            Status
+    +   pulumi:pulumi:Stack        1-create-an-eks-cluster-default created
+    +   └─ eks:index:Cluster       my-eks                          created
         ... dozens of resources omitted ...
     ```
 
@@ -66,7 +66,7 @@ The following steps will guide you through the process of creating an EKS cluste
     $ export KUBECONFIG=$PWD/kubeconfig.yaml
 
     $ kubectl get nodes
-    NAME                                          STATUS   ROLES    AGE   VERSION
+    NAME                                            STATUS   ROLES    AGE   VERSION
     ip-xxx-xxx-xxx-xxx.us-west-2.compute.internal   Ready    <none>   27m   v1.27.1-eks-2f008fe
     ip-xxx-xxx-xxx-xxx.us-west-2.compute.internal   Ready    <none>   27m   v1.27.1-eks-2f008fe
     ```

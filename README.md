@@ -42,18 +42,17 @@ Infrastructure as code (IaC) means using code to define and manage modern cloud 
 - `[aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)`: Amazon EKS uses IAM to provide secure authentication to your Kubernetes cluster.
 - `[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)`: the standard Kubernetes command line interface.
 - Basic knowledge of Kubernetes, RDBMS
+- VPN for connecting to AWS API
 
 ## Syllabus
 
-1. Create an EKS cluster
-2. Deploy TiDB with TiDB Operator
-
-- TiDB basic usage
+1. Create an EKS cluster `./1-create-an-eks-cluster/README.md`
+2. Deploy TiDB with TiDB Operator `./2-deploy-tidb-with-tidb-operator/README.md`
+3. TiDB basic usage
     - Access cluster on local laptop (port forward)
     - Insert records with MySQL CLI
     - Access TiDB dashboard
-- Scale up TiDB cluster with TiDB Operator
+4. Scale up TiDB cluster with TiDB Operator
     - Check current topology
     - Edit CR yaml
     - Wait for cluster ready
-- (Optional) GitHub Actions and Pulumi**

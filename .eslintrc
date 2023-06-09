@@ -21,13 +21,7 @@
     "prettier/prettier": "error",
     "consistent-return": "error",
     "no-fallthrough": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_"
-      }
-    ]
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["off"]
   }
 }
