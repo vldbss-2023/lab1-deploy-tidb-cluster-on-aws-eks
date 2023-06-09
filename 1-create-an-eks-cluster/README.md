@@ -1,25 +1,28 @@
-# Step 1: Create an EKS cluster
+# Step 4: Scale up TiDB cluster with TiDB Operator
 
-The following steps will guide you through the process of creating an EKS cluster on AWS. It takes about **_30_** minutes to complete.
+The following steps will guide you through the process of creating an EKS cluster on AWS. It takes about **_30_**
+minutes to complete.
 
 1. Set up AWS CLI
 
     1. Install AWS CLI
 
-       https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+        - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+        - `[aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)`:
+          Amazon EKS uses IAM to provide secure authentication to your Kubernetes cluster.
 
     2. Config AWS credentials
 
        Run this command to quickly set and view your credentials, region, and output format. The following example shows
        sample values.
 
-        ```bash
-        $ aws configure
-        AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-        AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-        Default region name [None]: us-west-2
-        Default output format [None]: yaml
-        ```
+       ```bash
+       $ aws configure
+       AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+       AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+       Default region name [None]: us-west-2
+       Default output format [None]: yaml
+       ```
 
 2. Set up Pulumi
 
@@ -35,7 +38,7 @@ The following steps will guide you through the process of creating an EKS cluste
 
     3. Set passphrase env to `""`
 
-        > This passphrase is required by Pulumi and was created by Lab maintainer.
+       > This passphrase is required by Pulumi and was created by Lab maintainer.
 
        ```bash
        $ export PULUMI_CONFIG_PASSPHRASE=""
