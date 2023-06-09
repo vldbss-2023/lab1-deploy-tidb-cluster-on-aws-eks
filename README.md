@@ -76,7 +76,7 @@ such as:
 
 This experiment will incur charges under the aws account, described in detail at
 
-- New EKS cluster control plane, **_1_** clusters x **_0.10_** USD per hour
+- New EKS cluster control plane, **_1_** cluster x **_0.10_** USD per hour
 - Two EKS worker EC2 instances, **_2_** instances * **_0.0464_** USD per hour
 - 4 EBS of size 1 GiB, with negligible cost
 
