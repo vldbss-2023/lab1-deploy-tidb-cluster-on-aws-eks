@@ -69,6 +69,7 @@ such as:
 4. (10 min) Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
 5. (10 min) Scale up TiDB cluster with TiDB
    Operator [`4-scale-up-tidb-cluster-with-tidb-operator`](./4-scale-up-tidb-cluster-with-tidb-operator/README.md)
+6. Bonus: Config the [TiDB slowlog threshold](https://docs.pingcap.com/tidb/dev/tidb-configuration-file#slow-threshold) in cluster config and update the cluster with Pulumi code
 
 ---
 
