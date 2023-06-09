@@ -46,12 +46,9 @@ Infrastructure as code (IaC) means using code to define and manage modern cloud 
 
 ## Syllabus
 
-1. Create an EKS cluster `./1-create-an-eks-cluster/README.md`
-2. Deploy TiDB with TiDB Operator `./2-deploy-tidb-with-tidb-operator/README.md`
-3. TiDB basic usage
-    - Access cluster on local laptop (port forward)
-    - Insert records with MySQL CLI
-    - Access TiDB dashboard
+1. Create an EKS cluster [`1-create-an-eks-cluster/README.md`](./1-create-an-eks-cluster/README.md)
+2. Deploy TiDB with TiDB Operator [`2-deploy-tidb-with-tidb-operator`](./2-deploy-tidb-with-tidb-operator/README.md)
+3. Explore TiDB basic usage [`3-explore-tidb-basic-usage/README.md`](./3-explore-tidb-basic-usage/README.md)
 4. Scale up TiDB cluster with TiDB Operator
     - Check current topology
     - Edit CR yaml
