@@ -84,7 +84,7 @@ Create a new GitHub repository base on [this template](https://github.com/vldbss
 4. (10 min) Scale up TiDB cluster with TiDB
    Operator [`4-scale-up-tidb-cluster-with-tidb-operator`](./4-scale-up-tidb-cluster-with-tidb-operator/README.md)
 5. Bonus: Config the [TiDB slow-log threshold](https://docs.pingcap.com/tidb/dev/tidb-configuration-file#slow-threshold) in cluster config and update the cluster with Pulumi code
-6. Cleanup: Destroy the EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
+6. Cleanup: Destroy the EKS cluster [`finished-destroy-the-eks-cluster-via-pulumi`](./1-create-an-eks-cluster/README.md#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
 
 ---
 
