@@ -26,18 +26,16 @@ The following steps guides you through the process of scaling TiKV instance for 
 
 2. Set up Pulumi
 
-    1. Set passphrase env to `""`
+    1. Install Pulumi
 
-       > This passphrase is required by Pulumi and was created by Lab maintainer.
+       https://www.pulumi.com/docs/get-started/install/
 
-       ```bash
-       $ export PULUMI_CONFIG_PASSPHRASE=""
-       ```
-
-    2. Select the `default` stack
+    2. Initialize to Pulumi
 
        ```bash
-       $ pulumi stack select default
+       $ pulumi login --local
+       $ export PULUMI_CONFIG_PASSPHRASE="" # Set passphrase env to `""`. This passphrase is required by Pulumi and was created by Lab maintainer.
+       $ pulumi stack select default -c # Select the `default` stack.
        ```
 
 3. Deploy TiDB Operator and TiDB Cluster via Pulumi
