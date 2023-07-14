@@ -7,56 +7,63 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
 > - If you have closed the shell session, please run `export KUBECONFIG=$PWD/../1-create-an-eks-cluster/kubeconfig.yaml`
     to load the kubeconfig env.
 
-1. Just return to the code of Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
+<!-- TOC -->
+* [Step 4: Scale up TiDB cluster with TiDB Operator](#step-4-scale-up-tidb-cluster-with-tidb-operator)
+  * [Just return to the code of Step 2 `2-deploy-tidb-with-tidb-operator`](#just-return-to-the-code-of-step-2-2-deploy-tidb-with-tidb-operator)
+  * [Edit the TiDB manifest file in Step 2 `2-deploy-tidb-with-tidb-operator`](#edit-the-tidb-manifest-file-in-step-2-2-deploy-tidb-with-tidb-operator)
+  * [Follow the Step 2 instructions and apply the manifest file](#follow-the-step-2-instructions-and-apply-the-manifest-file)
+  * [Wait for TiDB cluster ready](#wait-for-tidb-cluster-ready)
+<!-- TOC -->
 
-2. Edit the TiDB manifest file in Step
-   2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
+## Just return to the code of Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
 
-   [`tidb-cluster.yaml`](../2-deploy-tidb-with-tidb-operator/tidb-cluster-manifests/tidb-cluster.yaml)
+## Edit the TiDB manifest file in Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
 
-   ```diff
-     tikv:
-       baseImage: pingcap/tikv
-       maxFailoverCount: 0
-       evictLeaderTimeout: 1m
-   -   replicas: 1
-   +   replicas: 2
-       requests:
-         storage: "1Gi"
-       config:
-         storage:
-           reserve-space: "0MB"
-         rocksdb:
-           max-open-files: 256
-         raftdb:
-           max-open-files: 256
-   ```
+[`tidb-cluster.yaml`](../2-deploy-tidb-with-tidb-operator/tidb-cluster-manifests/tidb-cluster.yaml)
 
-3. Follow the Step 2 instructions and apply the manifest file
+```diff
+  tikv:
+    baseImage: pingcap/tikv
+    maxFailoverCount: 0
+    evictLeaderTimeout: 1m
+-   replicas: 1
++   replicas: 2
+    requests:
+      storage: "1Gi"
+    config:
+      storage:
+        reserve-space: "0MB"
+      rocksdb:
+        max-open-files: 256
+      raftdb:
+        max-open-files: 256
+```
 
-   **_CD to the `../2-deploy-tidb-with-tidb-operator/` directory._**
+## Follow the Step 2 instructions and apply the manifest file
 
-   ```bash
-   $ cd ../2-deploy-tidb-with-tidb-operator/
-   $ export PULUMI_CONFIG_PASSPHRASE=""
-   $ pulumi stack select default
-   $ pulumi up
-   ```
+**_CD to the `../2-deploy-tidb-with-tidb-operator/` directory._**
 
-4. Wait for TiDB cluster ready
+```bash
+$ cd ../2-deploy-tidb-with-tidb-operator/
+$ export PULUMI_CONFIG_PASSPHRASE=""
+$ pulumi stack select default
+$ pulumi up
+```
 
-   ```bash
-   $ kubectl get po
-   NAME                                       READY   STATUS    RESTARTS   AGE
-   basic-discovery-cff6d579c-npzmv            1/1     Running   0          141m
-   basic-monitor-0                            4/4     Running   0          141m
-   basic-pd-0                                 1/1     Running   0          110m
-   basic-tidb-0                               2/2     Running   0          108m
-   basic-tidb-dashboard-0                     1/1     Running   0          110m
-   basic-tikv-0                               1/1     Running   0          109m
-   basic-tikv-1                               1/1     Running   0          105s
-   tidb-controller-manager-75959db68d-gdbv6   1/1     Running   0          141m
-   tidb-scheduler-55d58fdd7f-kch9g            2/2     Running   0          141m
-   ```
+## Wait for TiDB cluster ready
 
-   You can see the newly created `basic-tikv-1` pod.
+```bash
+$ kubectl get po
+NAME                                       READY   STATUS    RESTARTS   AGE
+basic-discovery-cff6d579c-npzmv            1/1     Running   0          141m
+basic-monitor-0                            4/4     Running   0          141m
+basic-pd-0                                 1/1     Running   0          110m
+basic-tidb-0                               2/2     Running   0          108m
+basic-tidb-dashboard-0                     1/1     Running   0          110m
+basic-tikv-0                               1/1     Running   0          109m
+basic-tikv-1                               1/1     Running   0          105s
+tidb-controller-manager-75959db68d-gdbv6   1/1     Running   0          141m
+tidb-scheduler-55d58fdd7f-kch9g            2/2     Running   0          141m
+```
+
+You can see the newly created `basic-tikv-1` pod.

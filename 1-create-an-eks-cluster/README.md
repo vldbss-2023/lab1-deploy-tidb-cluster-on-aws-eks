@@ -9,6 +9,8 @@ framework. It takes about **_30_** minutes to complete.
     * [Install AWS CLI](#install-aws-cli)
     * [Config AWS credentials](#config-aws-credentials)
   * [Set up Pulumi](#set-up-pulumi)
+    * [Pulumi's basic concepts](#pulumis-basic-concepts)
+    * [Pulumi's control-flow](#pulumis-control-flow)
     * [Install Pulumi CLI](#install-pulumi-cli)
     * [Initialize to Pulumi](#initialize-to-pulumi)
   * [Create the EKS cluster via Pulumi (may take more than **_10_** minutes)](#create-the-eks-cluster-via-pulumi-may-take-more-than-10-minutes)
@@ -43,7 +45,7 @@ Default output format [None]: yaml
 
 Pulumi is an open-source infrastructure as code software platform that helps developers safely and predictably create, manage, and improve infrastructure. It provides a unified experience for managing infrastructure across multiple clouds and providers. Pulumi is controlled primarily using the command line interface (CLI).
 
-Pulumi's basic concepts are:
+### Pulumi's basic concepts
 
 ![pulumi_concepts](../.imgs/pulumi_concepts.png)
 
@@ -54,7 +56,7 @@ Pulumi's basic concepts are:
   - Configuration: In many cases, different stacks for a single project will need differing values. For instance, you may want to use a different number of servers for your Kubernetes cluster between your development and production stacks. The Pulumi stack config file is a YAML file that contains configuration values for a specific stack. The file is named `Pulumi.<stack-name>.yaml`, where `<stack-name>` is the name of the stack.
   - State: The state of a Pulumi stack is a snapshot of all the resources in that stack. The state is stored in local files or in a cloud service such as Pulumi's SaaS backend and AWS S3.
 
-Pulumi's control-flow is:
+### Pulumi's control-flow
 
 ![pulumi_control_flow](../.imgs/pulumi_control.png)
 
