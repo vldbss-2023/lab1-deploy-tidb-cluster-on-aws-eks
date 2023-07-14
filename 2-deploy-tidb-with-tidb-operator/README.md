@@ -1,4 +1,4 @@
-# Step 2: Deploy a TiDB cluster with TiDB Operator
+# Step 2: Deploy a TiDB Cluster with TiDB Operator
 
 The following steps guides you through the process of scaling TiKV instance for a TiDB Operator managed cluster. It takes about
 10 minutes to complete.
@@ -9,7 +9,7 @@ The following steps guides you through the process of scaling TiKV instance for 
     to load the kubeconfig env.
 
 <!-- TOC -->
-* [Step 2: Deploy a TiDB cluster with TiDB Operator](#step-2-deploy-a-tidb-cluster-with-tidb-operator)
+* [Step 2: Deploy a TiDB Cluster with TiDB Operator](#step-2-deploy-a-tidb-cluster-with-tidb-operator)
   * [Install Helm](#install-helm)
     * [Download](#download)
     * [Init](#init)
@@ -18,9 +18,9 @@ The following steps guides you through the process of scaling TiKV instance for 
     * [Initialize to Pulumi](#initialize-to-pulumi)
   * [Deploy TiDB Operator and TiDB Cluster via Pulumi](#deploy-tidb-operator-and-tidb-cluster-via-pulumi)
     * [What is CRD?](#what-is-crd)
-    * [How TiDB Operator works?](#how-tidb-operator-works)
-    * [Do it](#do-it)
-  * [Wait for TiDB cluster ready](#wait-for-tidb-cluster-ready)
+    * [How TiDB Operator Works?](#how-tidb-operator-works)
+    * [Do It](#do-it)
+  * [[Scoring Point] Wait for TiDB Cluster Ready](#scoring-point-wait-for-tidb-cluster-ready)
 <!-- TOC -->
 
 ## Install Helm
@@ -67,7 +67,7 @@ In Kubernetes, a Custom Resource Definition (CRD) is a Kubernetes object that de
 Once a CRD is created, custom resources of that type can be created, updated, and deleted using the Kubernetes API. Custom resources can be used to represent any type of object, such as a database, a service, or a virtual machine.
 Custom resources are a powerful way to extend the capabilities of Kubernetes. They can be used to manage any type of object that is not natively supported by Kubernetes.
 
-### How TiDB Operator works?
+### How TiDB Operator Works?
 
 ![kubernetes_control](../.imgs/kubernetes_control.png)
 
@@ -78,7 +78,7 @@ Custom resources are a powerful way to extend the capabilities of Kubernetes. Th
 - This may involve creating new database pods, updating existing database pods, or deleting database pods.
 - The operator continues to monitor the database and take action as needed to ensure that the database is always in the desired state.
 
-### Do it
+### Do It
 
 ```bash
 $ pulumi up
@@ -92,7 +92,7 @@ Updating (default):
      ... dozens of resources omitted ...
 ```
 
-## Wait for TiDB cluster ready
+## [Scoring Point] Wait for TiDB Cluster Ready
 
 ```bash
 $ kubectl get po

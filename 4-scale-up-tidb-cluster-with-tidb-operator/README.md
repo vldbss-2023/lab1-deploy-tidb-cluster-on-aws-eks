@@ -1,4 +1,4 @@
-# Step 4: Scale up TiDB cluster with TiDB Operator
+# Step 4: Scale up TiDB Cluster with TiDB Operator
 
 The following steps guides you the basic usage of a newly deployed TiDB cluster. It takes about 10 minutes to complete.
 
@@ -8,16 +8,16 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
     to load the kubeconfig env.
 
 <!-- TOC -->
-* [Step 4: Scale up TiDB cluster with TiDB Operator](#step-4-scale-up-tidb-cluster-with-tidb-operator)
-  * [Just return to the code of Step 2 `2-deploy-tidb-with-tidb-operator`](#just-return-to-the-code-of-step-2-2-deploy-tidb-with-tidb-operator)
-  * [Edit the TiDB manifest file in Step 2 `2-deploy-tidb-with-tidb-operator`](#edit-the-tidb-manifest-file-in-step-2-2-deploy-tidb-with-tidb-operator)
-  * [Follow the Step 2 instructions and apply the manifest file](#follow-the-step-2-instructions-and-apply-the-manifest-file)
-  * [Wait for TiDB cluster ready](#wait-for-tidb-cluster-ready)
+* [Step 4: Scale up TiDB Cluster with TiDB Operator](#step-4-scale-up-tidb-cluster-with-tidb-operator)
+  * [Just Return to the Code of Step 2 `2-deploy-tidb-with-tidb-operator`](#just-return-to-the-code-of-step-2-2-deploy-tidb-with-tidb-operator)
+  * [Edit the TiDB Manifest File in Step 2 `2-deploy-tidb-with-tidb-operator`](#edit-the-tidb-manifest-file-in-step-2-2-deploy-tidb-with-tidb-operator)
+  * [Follow the Step 2 Instructions and Apply the Manifest Files](#follow-the-step-2-instructions-and-apply-the-manifest-files)
+  * [[Scoring Point] Wait for TiDB Cluster Ready](#scoring-point-wait-for-tidb-cluster-ready)
 <!-- TOC -->
 
-## Just return to the code of Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
+## Just Return to the Code of Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
 
-## Edit the TiDB manifest file in Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
+## Edit the TiDB Manifest File in Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
 
 [`tidb-cluster.yaml`](../2-deploy-tidb-with-tidb-operator/tidb-cluster-manifests/tidb-cluster.yaml)
 
@@ -39,7 +39,7 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
         max-open-files: 256
 ```
 
-## Follow the Step 2 instructions and apply the manifest file
+## Follow the Step 2 Instructions and Apply the Manifest Files
 
 **_CD to the `../2-deploy-tidb-with-tidb-operator/` directory._**
 
@@ -50,7 +50,7 @@ $ pulumi stack select default
 $ pulumi up
 ```
 
-## Wait for TiDB cluster ready
+## [Scoring Point] Wait for TiDB Cluster Ready
 
 ```bash
 $ kubectl get po

@@ -1,4 +1,4 @@
-# Step 3: Explore TiDB basic usage
+# Step 3: Explore TiDB Basic Usage
 
 The following steps guides you the basic usage of a newly deployed TiDB cluster. It takes about 10 minutes to complete.
 
@@ -8,17 +8,17 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
     to load the kubeconfig env.
 
 <!-- TOC -->
-* [Step 3: Explore TiDB basic usage](#step-3-explore-tidb-basic-usage)
-  * [List all services related to TiDB cluster](#list-all-services-related-to-tidb-cluster)
-  * [Set up port-forward to TiDB cluster, TiDB Dashboard and Grafana](#set-up-port-forward-to-tidb-cluster-tidb-dashboard-and-grafana)
-  * [Access TiDB Dashboard and Grafana in browser](#access-tidb-dashboard-and-grafana-in-browser)
-  * [Access TiDB cluster via MySQL client](#access-tidb-cluster-via-mysql-client)
-    * [Create a `hello_world` table](#create-a-helloworld-table)
-    * [Query the TiDB version](#query-the-tidb-version)
-    * [Query the TiDB cluster information](#query-the-tidb-cluster-information)
+* [Step 3: Explore TiDB Basic Usage](#step-3-explore-tidb-basic-usage)
+  * [List All Services Related to TiDB Cluster](#list-all-services-related-to-tidb-cluster)
+  * [Set up Port-Forward to TiDB Cluster, TiDB Dashboard and Grafana](#set-up-port-forward-to-tidb-cluster-tidb-dashboard-and-grafana)
+  * [Access TiDB Dashboard and Grafana in Browser](#access-tidb-dashboard-and-grafana-in-browser)
+  * [[Scoring Point] Access TiDB Cluster via MySQL Client](#scoring-point-access-tidb-cluster-via-mysql-client)
+    * [Create A `hello_world` Table](#create-a-helloworld-table)
+    * [Query the TiDB Version](#query-the-tidb-version)
+    * [Query the TiDB Cluster Information](#query-the-tidb-cluster-information)
 <!-- TOC -->
 
-## List all services related to TiDB cluster
+## List All Services Related to TiDB Cluster
 
 ```bash
 $ kubectl get svc -l app.kubernetes.io/instance=basic
@@ -35,7 +35,7 @@ basic-tidb-peer                ClusterIP   None             <none>        10080/
 basic-tikv-peer                ClusterIP   None             <none>        20160/TCP             71m
 ```
 
-## Set up port-forward to TiDB cluster, TiDB Dashboard and Grafana
+## Set up Port-Forward to TiDB Cluster, TiDB Dashboard and Grafana
 
 ```bash
 $ ./set-up-port-forward.sh
@@ -47,7 +47,7 @@ Forwarding from 127.0.0.1:4000 -> 4000
 Forwarding from [::1]:4000 -> 4000
 ```
 
-## Access TiDB Dashboard and Grafana in browser
+## Access TiDB Dashboard and Grafana in Browser
 
 - TiDB Dashboard: http://localhost:12333, with **_empty_** password
 
@@ -57,7 +57,7 @@ Forwarding from [::1]:4000 -> 4000
 
   ![grafana](../.imgs/grafana.png)
 
-## Access TiDB cluster via MySQL client
+## [Scoring Point] Access TiDB Cluster via MySQL Client
 
 In another shell session, run:
 
@@ -65,7 +65,7 @@ In another shell session, run:
 $ mysql --comments -h 127.0.0.1 -P 4000 -u root
 ```
 
-### Create a `hello_world` table
+### Create A `hello_world` Table
 
 ```bash
 mysql> use test;
@@ -92,7 +92,7 @@ APPROXIMATE_KEYS: 0
 1 row in set (0.03 sec)
 ```
 
-### Query the TiDB version
+### Query the TiDB Version
 
 ```bash
 mysql> select tidb_version()\G
@@ -110,7 +110,7 @@ Check Table Before Drop: false
 1 row in set (0.01 sec)
 ```
 
-### Query the TiDB cluster information
+### Query the TiDB Cluster Information
 
 ```bash
 mysql> select * from information_schema.cluster_info\G

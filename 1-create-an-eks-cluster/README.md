@@ -1,21 +1,21 @@
-# Step 1: Create an EKS cluster
+# Step 1: Create an EKS Cluster
 
 The following steps guide you through the process of creating an EKS cluster on AWS, with the help of Pulumi IaC
 framework. It takes about **_30_** minutes to complete.
 
 <!-- TOC -->
-* [Step 1: Create an EKS cluster](#step-1-create-an-eks-cluster)
+* [Step 1: Create an EKS Cluster](#step-1-create-an-eks-cluster)
   * [Set up AWS CLI](#set-up-aws-cli)
     * [Install AWS CLI](#install-aws-cli)
-    * [Config AWS credentials](#config-aws-credentials)
+    * [Config AWS Credentials](#config-aws-credentials)
   * [Set up Pulumi](#set-up-pulumi)
-    * [Pulumi's basic concepts](#pulumis-basic-concepts)
-    * [Pulumi's control-flow](#pulumis-control-flow)
+    * [Pulumi's Basic Concepts](#pulumis-basic-concepts)
+    * [Pulumi's Control-Flow](#pulumis-control-flow)
     * [Install Pulumi CLI](#install-pulumi-cli)
     * [Initialize to Pulumi](#initialize-to-pulumi)
-  * [Create the EKS cluster via Pulumi (may take more than **_10_** minutes)](#create-the-eks-cluster-via-pulumi-may-take-more-than-10-minutes)
-  * [[Scoring Point] Interact with the newly created EKS cluster](#scoring-point-interact-with-the-newly-created-eks-cluster)
-  * [[**Do Not Execute This Step until Lab 1 Finished**] Destroy the EKS cluster via Pulumi](#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
+  * [Create the EKS Cluster via Pulumi (may take more than **_10_** minutes)](#create-the-eks-cluster-via-pulumi-may-take-more-than-10-minutes)
+  * [[Scoring Point] Interact with the Newly Created EKS Cluster](#scoring-point-interact-with-the-newly-created-eks-cluster)
+  * [[**Do Not Execute This Step until Lab 1 Finished**] Destroy the EKS Cluster via Pulumi](#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
 <!-- TOC -->
 
 ## Set up AWS CLI
@@ -28,7 +28,7 @@ The AWS CLI is a unified tool that provides a consistent interface for interacti
 - `[aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)`:
   Amazon EKS uses IAM to provide secure authentication to your Kubernetes cluster.
 
-### Config AWS credentials
+### Config AWS Credentials
 
 Run this command to quickly set and view your credentials, region, and output format. The following example shows
 sample values.
@@ -45,7 +45,7 @@ Default output format [None]: yaml
 
 Pulumi is an open-source infrastructure as code software platform that helps developers safely and predictably create, manage, and improve infrastructure. It provides a unified experience for managing infrastructure across multiple clouds and providers. Pulumi is controlled primarily using the command line interface (CLI).
 
-### Pulumi's basic concepts
+### Pulumi's Basic Concepts
 
 ![pulumi_concepts](../.imgs/pulumi_concepts.png)
 
@@ -56,7 +56,7 @@ Pulumi is an open-source infrastructure as code software platform that helps dev
   - Configuration: In many cases, different stacks for a single project will need differing values. For instance, you may want to use a different number of servers for your Kubernetes cluster between your development and production stacks. The Pulumi stack config file is a YAML file that contains configuration values for a specific stack. The file is named `Pulumi.<stack-name>.yaml`, where `<stack-name>` is the name of the stack.
   - State: The state of a Pulumi stack is a snapshot of all the resources in that stack. The state is stored in local files or in a cloud service such as Pulumi's SaaS backend and AWS S3.
 
-### Pulumi's control-flow
+### Pulumi's Control-Flow
 
 ![pulumi_control_flow](../.imgs/pulumi_control.png)
 
@@ -78,7 +78,7 @@ $ export PULUMI_CONFIG_PASSPHRASE="" # Set passphrase env to `""`. This passphra
 $ pulumi stack select default -c # Select the `default` stack.
 ```
 
-## Create the EKS cluster via Pulumi (may take more than **_10_** minutes)
+## Create the EKS Cluster via Pulumi (may take more than **_10_** minutes)
 
 ```bash
 $ pulumi up
@@ -90,7 +90,7 @@ Updating (default):
     ... dozens of resources omitted ...
 ```
 
-## [Scoring Point] Interact with the newly created EKS cluster
+## [Scoring Point] Interact with the Newly Created EKS Cluster
 
 ```bash
 $ pulumi stack output kubeconfig > kubeconfig.yaml
@@ -102,7 +102,7 @@ ip-xxx-xxx-xxx-xxx.us-west-2.compute.internal   Ready    <none>   27m   v1.27.1-
 ip-xxx-xxx-xxx-xxx.us-west-2.compute.internal   Ready    <none>   27m   v1.27.1-eks-2f008fe
 ```
 
-## [**Do Not Execute This Step until Lab 1 Finished**] Destroy the EKS cluster via Pulumi
+## [**Do Not Execute This Step until Lab 1 Finished**] Destroy the EKS Cluster via Pulumi
 
 ```bash
 $ export PULUMI_CONFIG_PASSPHRASE="" # Set passphrase env to `""`. This passphrase is required by Pulumi and was created by Lab maintainer.
