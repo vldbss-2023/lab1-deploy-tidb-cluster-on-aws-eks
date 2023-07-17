@@ -47,6 +47,7 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
 $ cd ../2-deploy-tidb-with-tidb-operator/
 $ export PULUMI_CONFIG_PASSPHRASE=""
 $ pulumi stack select default
+
 $ pulumi up
 ```
 
