@@ -9,6 +9,8 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
 
 <!-- TOC -->
 * [Step 3: Explore TiDB Basic Usage](#step-3-explore-tidb-basic-usage)
+  * [About TiDB](#about-tidb)
+    * [Why TiDB Cluster (Compare to A MySql Instance)?](#why-tidb-cluster-compare-to-a-mysql-instance)
   * [List All Services Related to TiDB Cluster](#list-all-services-related-to-tidb-cluster)
   * [Set up Port-Forward to TiDB Cluster, TiDB Dashboard and Grafana](#set-up-port-forward-to-tidb-cluster-tidb-dashboard-and-grafana)
   * [Access TiDB Dashboard and Grafana in Browser](#access-tidb-dashboard-and-grafana-in-browser)
@@ -17,6 +19,16 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
     * [Query the TiDB Version](#query-the-tidb-version)
     * [Query the TiDB Cluster Information](#query-the-tidb-cluster-information)
 <!-- TOC -->
+
+## About TiDB
+
+TiDB is an open-source, distributed SQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. It's MySQL compatible, and offers horizontal scalability, strong consistency, and high availability.
+
+### Why TiDB Cluster (Compare to A MySql Instance)?
+
+![tidb_mysql_1](../.imgs/tidb_mysql_1.png)
+
+![tidb_mysql_2](../.imgs/tidb_mysql_2.png)
 
 ## List All Services Related to TiDB Cluster
 
