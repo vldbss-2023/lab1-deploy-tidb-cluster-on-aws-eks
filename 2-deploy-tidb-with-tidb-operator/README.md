@@ -10,12 +10,7 @@ The following steps guides you through the process of scaling TiKV instance for 
 
 <!-- TOC -->
 * [Step 2: Deploy a TiDB Cluster with TiDB Operator](#step-2-deploy-a-tidb-cluster-with-tidb-operator)
-  * [Install Helm](#install-helm)
-    * [Download](#download)
-    * [Init](#init)
-  * [Set up Pulumi](#set-up-pulumi)
-    * [Install Pulumi](#install-pulumi)
-    * [Initialize to Pulumi](#initialize-to-pulumi)
+  * [Initialize to Pulumi](#initialize-to-pulumi)
   * [Deploy TiDB Operator and TiDB Cluster via Pulumi](#deploy-tidb-operator-and-tidb-cluster-via-pulumi)
     * [What is CRD?](#what-is-crd)
     * [How TiDB Operator Works?](#how-tidb-operator-works)
@@ -23,33 +18,7 @@ The following steps guides you through the process of scaling TiKV instance for 
   * [[Scoring Point] Wait for TiDB Cluster Ready](#scoring-point-wait-for-tidb-cluster-ready)
 <!-- TOC -->
 
-## Install Helm
-
-Helm is a tool that automates the creation, packaging, configuration, and deployment of Kubernetes applications.
-
-> A.K.A., A lightweight alternative to Pulumi.
-
-### Download
-
-```bash
-$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-$ chmod 700 get_helm.sh
-$ ./get_helm.sh
-```
-
-### Init
-
-```bash
-$ helm init --client-only
-```
-
-## Set up Pulumi
-
-### Install Pulumi
-
-   https://www.pulumi.com/docs/get-started/install/
-
-### Initialize to Pulumi
+## Initialize to Pulumi
 
 ```bash
 $ pulumi login --local

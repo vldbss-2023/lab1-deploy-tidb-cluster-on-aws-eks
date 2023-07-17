@@ -59,23 +59,12 @@ such as:
 ## Pre-Requisites
 
 - An AWS account
-- [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/): the standard Kubernetes command line interface
-- Node.js 16. Use nvm to [install Node.js 16](https://github.com/nvm-sh/nvm#installing-and-updating):
-
-  ```bash
-  $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-  $ nvm install 16
-  ```
-
 - VPN for connecting to AWS API and GitHub
-
-## The Very First Step
-
-Create a new GitHub repository base on [this template](https://github.com/vldbss-2023/lab1-deploy-tidb-cluster-on-aws-eks)
-1. Clone the newly created repository
-2. In the root directory of the repository, run `make install` to install the dependencies
+- Linux or MacOS or WSL2 environments
 
 ## Syllabus
+
+- Step 0: Install Dependencies [`0-install-dependencies`](./0-install-dependencies/README.md)
 
 1. (30 min) Create an EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md)
 2. (10 min) Deploy TiDB with TiDB
