@@ -18,6 +18,7 @@
 
 Create a new GitHub repository base on [this template](https://github.com/vldbss-2023/lab1-deploy-tidb-cluster-on-aws-eks)
 1. Clone the newly created repository
+   ![use_template](../.imgs/use_template.png)
 2. In the root directory of the repository, run `make install` to install the dependencies
 
 ## Install `kubectl`
