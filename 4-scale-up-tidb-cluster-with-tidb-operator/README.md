@@ -12,7 +12,7 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
   * [Just Return to the Code of Step 2 `2-deploy-tidb-with-tidb-operator`](#just-return-to-the-code-of-step-2-2-deploy-tidb-with-tidb-operator)
   * [Edit the TiDB Manifest File in Step 2 `2-deploy-tidb-with-tidb-operator`](#edit-the-tidb-manifest-file-in-step-2-2-deploy-tidb-with-tidb-operator)
   * [Follow the Step 2 Instructions and Apply the Manifest Files](#follow-the-step-2-instructions-and-apply-the-manifest-files)
-  * [[25 Scoring Point] Wait for TiDB Cluster Ready](#25-scoring-point-wait-for-tidb-cluster-ready)
+  * [[20 Scoring Point] Wait for TiDB Cluster Ready](#20-scoring-point-wait-for-tidb-cluster-ready)
 <!-- TOC -->
 
 ## Just Return to the Code of Step 2 [`2-deploy-tidb-with-tidb-operator`](../2-deploy-tidb-with-tidb-operator/README.md)
@@ -51,7 +51,7 @@ $ pulumi stack select default
 $ pulumi up
 ```
 
-## [25 Scoring Point] Wait for TiDB Cluster Ready
+## [20 Scoring Point] Wait for TiDB Cluster Ready
 
 ```bash
 $ kubectl get po

@@ -3,6 +3,15 @@
 This lab deploys a TiDB cluster on an AWS EKS. The deployment process is automated with Pulumi, which is a popular
 infrastructure as code (IaC) framework.
 
+<!-- TOC -->
+* [Lab 1: Deploy TiDB Cluster on AWS EKS](#lab-1-deploy-tidb-cluster-on-aws-eks)
+  * [Introduction](#introduction)
+  * [Learning Objectives](#learning-objectives)
+  * [Pre-Requisites](#pre-requisites)
+  * [Syllabus](#syllabus)
+  * [AWS billing price](#aws-billing-price)
+<!-- TOC -->
+
 ## Introduction
 
 > Why using cloud platform (AWS)?
@@ -64,16 +73,20 @@ such as:
 
 ## Syllabus
 
+> 100 basic points + 20 bonus points.
+
 - Step 0: Install Dependencies [`0-install-dependencies`](./0-install-dependencies/README.md)
 
 1. (25 points) Create an EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md)
 2. (25 points) Deploy TiDB with TiDB
    Operator [`2-deploy-tidb-with-tidb-operator`](./2-deploy-tidb-with-tidb-operator/README.md)
-3. (25 points) Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
-4. (25 points) Scale up TiDB cluster with TiDB
+3. (20 points) Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
+4. (20 points) Scale up TiDB cluster with TiDB
    Operator [`4-scale-up-tidb-cluster-with-tidb-operator`](./4-scale-up-tidb-cluster-with-tidb-operator/README.md)
-5. (20 bonus points) Bonus: Config the TiDB slow-log threshold and update the cluster with Pulumi code [[bonus]config-slow-log-threshold](./[bonus]config-slow-log-threshold/README.md)
-6. Cleanup: Destroy the EKS cluster [`finished-destroy-the-eks-cluster-via-pulumi`](./1-create-an-eks-cluster/README.md#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
+5. (10 points) Cleanup: Destroy the EKS cluster [`finished-destroy-the-eks-cluster-via-pulumi`](./1-create-an-eks-cluster/README.md#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
+
+- (20 bonus points) Bonus: Config the TiDB slow-log threshold and update the cluster with Pulumi code [[bonus]config-slow-log-threshold](./[bonus]config-slow-log-threshold/README.md)
+
 
 ---
 
