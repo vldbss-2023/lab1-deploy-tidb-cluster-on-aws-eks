@@ -19,7 +19,7 @@ The following steps guides you through the process of scaling TiKV instance for 
       * [Reconcile Pattern](#reconcile-pattern)
   * [Deploy TiDB Operator and TiDB Cluster via Pulumi](#deploy-tidb-operator-and-tidb-cluster-via-pulumi)
     * [TiUP(Bare-Metal) vs TiDB Operator(On-Kubernetes)](#tiupbare-metal-vs-tidb-operatoron-kubernetes)
-  * [[Scoring Point] Wait for TiDB Cluster Ready](#scoring-point-wait-for-tidb-cluster-ready)
+  * [[25 Scoring Point] Wait for TiDB Cluster Ready](#25-scoring-point-wait-for-tidb-cluster-ready)
 <!-- TOC -->
 
 ## Initialize to Pulumi
@@ -122,7 +122,7 @@ TiDB Operator (Kubernetes):
 - Loose coupling - TiDB cluster abstracted from underlying infrastructure for portability.
 - Microservices friendly - Kubernetes is ideal platform for microservices architectures.
 
-## [Scoring Point] Wait for TiDB Cluster Ready
+## [25 Scoring Point] Wait for TiDB Cluster Ready
 
 ```bash
 $ kubectl get po

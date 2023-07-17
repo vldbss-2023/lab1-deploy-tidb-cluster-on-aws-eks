@@ -14,7 +14,7 @@ The following steps guides you the basic usage of a newly deployed TiDB cluster.
   * [List All Services Related to TiDB Cluster](#list-all-services-related-to-tidb-cluster)
   * [Set up Port-Forward to TiDB Cluster, TiDB Dashboard and Grafana](#set-up-port-forward-to-tidb-cluster-tidb-dashboard-and-grafana)
   * [Access TiDB Dashboard and Grafana in Browser](#access-tidb-dashboard-and-grafana-in-browser)
-  * [[Scoring Point] Access TiDB Cluster via MySQL Client](#scoring-point-access-tidb-cluster-via-mysql-client)
+  * [[25 Scoring Point] Access TiDB Cluster via MySQL Client](#25-scoring-point-access-tidb-cluster-via-mysql-client)
     * [Create A `hello_world` Table](#create-a-helloworld-table)
     * [Query the TiDB Version](#query-the-tidb-version)
     * [Query the TiDB Cluster Information](#query-the-tidb-cluster-information)
@@ -69,7 +69,7 @@ Forwarding from [::1]:4000 -> 4000
 
   ![grafana](../.imgs/grafana.png)
 
-## [Scoring Point] Access TiDB Cluster via MySQL Client
+## [25 Scoring Point] Access TiDB Cluster via MySQL Client
 
 In another shell session, run:
 

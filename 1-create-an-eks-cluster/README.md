@@ -14,7 +14,7 @@ framework. It takes about **_30_** minutes to complete.
   * [Initialize to Pulumi](#initialize-to-pulumi)
   * [Create the EKS Cluster via Pulumi (may take more than **_10_** minutes)](#create-the-eks-cluster-via-pulumi-may-take-more-than-10-minutes)
     * [What Happened?](#what-happened)
-  * [[Scoring Point] Interact with the Newly Created EKS Cluster](#scoring-point-interact-with-the-newly-created-eks-cluster)
+  * [[25 Scoring Point] Interact with the Newly Created EKS Cluster](#25-scoring-point-interact-with-the-newly-created-eks-cluster)
   * [[**Do Not Execute This Step until Lab 1 Finished**] Destroy the EKS Cluster via Pulumi](#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
 <!-- TOC -->
 
@@ -93,7 +93,7 @@ Updating (default):
 4. The Pulumi deployment engine compares the desired state with the current state of the infrastructure.
 5. The deployment engine creates, updates, or deletes resources as needed to bring the infrastructure into the desired state.
 
-## [Scoring Point] Interact with the Newly Created EKS Cluster
+## [25 Scoring Point] Interact with the Newly Created EKS Cluster
 
 ```bash
 $ pulumi stack output kubeconfig > kubeconfig.yaml

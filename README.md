@@ -66,13 +66,13 @@ such as:
 
 - Step 0: Install Dependencies [`0-install-dependencies`](./0-install-dependencies/README.md)
 
-1. (30 min) Create an EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md)
-2. (10 min) Deploy TiDB with TiDB
+1. (25 points) Create an EKS cluster [`1-create-an-eks-cluster`](./1-create-an-eks-cluster/README.md)
+2. (25 points) Deploy TiDB with TiDB
    Operator [`2-deploy-tidb-with-tidb-operator`](./2-deploy-tidb-with-tidb-operator/README.md)
-3. (10 min) Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
-4. (10 min) Scale up TiDB cluster with TiDB
+3. (25 points) Explore TiDB basic usage [`3-explore-tidb-basic-usage`](./3-explore-tidb-basic-usage/README.md)
+4. (25 points) Scale up TiDB cluster with TiDB
    Operator [`4-scale-up-tidb-cluster-with-tidb-operator`](./4-scale-up-tidb-cluster-with-tidb-operator/README.md)
-5. Bonus: Config the [TiDB slow-log threshold](https://docs.pingcap.com/tidb/dev/tidb-configuration-file#slow-threshold) in cluster config and update the cluster with Pulumi code
+5. (20 bonus points) Bonus: Config the TiDB slow-log threshold and update the cluster with Pulumi code [[bonus]config-slow-log-threshold](./[bonus]config-slow-log-threshold/README.md)
 6. Cleanup: Destroy the EKS cluster [`finished-destroy-the-eks-cluster-via-pulumi`](./1-create-an-eks-cluster/README.md#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
 
 ---
