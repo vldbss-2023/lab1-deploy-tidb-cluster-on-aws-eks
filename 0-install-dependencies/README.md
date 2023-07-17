@@ -44,6 +44,8 @@ $ nvm install 16
 
 ### Config AWS Credentials
 
+> This step requires you to have an AWS account (access key and secret access key). If you don't have one now, just skip this step.
+
 Run this command to quickly set and view your credentials, region, and output format. The following example shows
 sample values.
 
