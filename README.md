@@ -13,47 +13,13 @@ This lab deploys a TiDB cluster on an AWS EKS. The TiDB cluster is managed by Ti
 
 ## Introduction
 
-> Why using cloud platform (AWS)?
+Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale, as your business needs change.
 
-Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software,
-analytics, and intelligence—over the internet ("the cloud") to offer **faster innovation**, **flexible resources**, and
-**economies of scale**, as **your business needs change**.
+Amazon EKS is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS. Kubernetes offers automating deployment, scaling, and management of containerized applications. Adopting Kubernetes  ultimately accelerates business and saves costs under relatively high application workload.
 
-> Why Kubernetes (EKS)?
+TiDB is an open-source distributed SQL database that supports HTAP workloads. It provides users with a one-stop database solution, and helps improve scalability, availability and reliability for users' data storage systems.
 
-Kubernetes offers automating deployment, scaling, and management of containerized applications.
-Adopting Kubernetes ultimately **accelerates business** and **saves costs** under relatively high application workload.
-
-Amazon EKS is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS.
-
-> Why Operator?
-
-Operators are software extensions to Kubernetes that use custom resources to manage applications and their components.
-
-At first, there is Kubernetes, which is capable of scaling and being usable in extremely diverse contexts and applications.
-To **do more complex things**, capability of Kubernetes must be extended and more sophisticated automations must be created,
-suited to individual applications and their specific domain of action.
-This is where the Operators come in.
-
-> Why TiDB?
-
-TiDB is an open-source distributed SQL database that supports HTAP workloads. It provides users with a one-stop database
-solution, and helps improve scalability, availability and reliability for users' data storage systems.
-
-> Why TiDB on EKS?
-
-When deploying TiDB clusters on AWS EKS, users can gain all features provided by TiDB, while leverage the benefits of
-operating TiDB clusters on managed Kubernetes services.
-
-> Why IaC (Pulumi)
-
-Infrastructure as code (IaC) means using code to define and manage modern cloud infrastructure. IaC has many benefits,
-such as:
-
-- Version control
-- Testing
-- Use of IDEs
-- DevOps
+When deploying TiDB clusters on AWS EKS, users can gain all features provided by TiDB, while leverage the benefits of operating TiDB clusters on managed Kubernetes services.
 
 ## Learning Objectives
 
