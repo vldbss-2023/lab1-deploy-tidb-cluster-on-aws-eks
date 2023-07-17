@@ -33,3 +33,5 @@ node_modules
 .cache
 .ticat
 kubeconfig.yaml
+
+~$*.pptx

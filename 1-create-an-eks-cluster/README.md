@@ -6,8 +6,11 @@ framework. It takes about **_30_** minutes to complete.
 <!-- TOC -->
 * [Step 1: Create an EKS Cluster](#step-1-create-an-eks-cluster)
   * [About Pulumi](#about-pulumi)
+    * [Why Pulumi?](#why-pulumi)
     * [Pulumi's Basic Concepts](#pulumis-basic-concepts)
   * [About AWS EKS](#about-aws-eks)
+    * [What is Kubernetes?](#what-is-kubernetes)
+      * [Why container?](#why-container)
   * [Initialize to Pulumi](#initialize-to-pulumi)
   * [Create the EKS Cluster via Pulumi (may take more than **_10_** minutes)](#create-the-eks-cluster-via-pulumi-may-take-more-than-10-minutes)
     * [What Happened?](#what-happened)
@@ -18,6 +21,18 @@ framework. It takes about **_30_** minutes to complete.
 ## About Pulumi
 
 Pulumi is an open-source infrastructure as code software platform that helps developers safely and predictably create, manage, and improve infrastructure. It provides a unified experience for managing infrastructure across multiple clouds and providers. Pulumi is controlled primarily using the command line interface (CLI).
+
+### Why Pulumi?
+
+Infrastructure as code (IaC) means using code to define and manage modern cloud infrastructure. IaC has many benefits,
+such as:
+
+- Version control
+- Testing
+- Use of IDEs
+- DevOps
+
+Pulumi is one of the most popular IaC tools. It is actively developed and supported by a large community.
 
 ### Pulumi's Basic Concepts
 
@@ -32,7 +47,21 @@ Pulumi is an open-source infrastructure as code software platform that helps dev
 
 ## About AWS EKS
 
-TBD...
+EKS makes it easy to deploy, manage, and scale production-grade Kubernetes clusters on AWS without having to manually maintain the control plane. It's a robust managed Kubernetes service optimized for AWS infrastructure.
+
+### What is Kubernetes?
+
+Kubernetes (also known as K8s) is an open-source container orchestration system for automating deployment, scaling, and management of containerized applications.
+
+Kubernetes makes running containerized applications at scale simpler, more resilient, and consistent across infrastructure. Its architecture and ecosystem provide unique advantages for modern application deployments.
+
+#### Why container?
+
+There are several benefits to using containers to deploy applications compared to other approaches:
+
+- **Portability**: Containers are a standard unit of software that can be run anywhere, including on-premises, in public clouds, and in hybrid environments.
+- **Isolation**: Containers provide process isolation, which means that each containerized application runs in its own isolated environment. This isolation helps ensure that the application will not be affected by changes made to other applications.
+- **Resource efficiency**: Containers are lightweight and share the host operating system's kernel. This means that containers use fewer resources than virtual machines (VMs) and can be started and stopped much more quickly.
 
 ## Initialize to Pulumi
 
