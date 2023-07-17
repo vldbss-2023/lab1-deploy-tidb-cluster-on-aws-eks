@@ -18,7 +18,7 @@
 
 Create a new GitHub repository base on [this template](https://github.com/vldbss-2023/lab1-deploy-tidb-cluster-on-aws-eks)
 
-1. Create your own lab1 repo by clicking green button
+1. Create your own lab1 repository by clicking the green button
    ![use_template](../.imgs/use_template.png)
 2. Clone the newly created repository
 3. In the root directory of the repository, run `make install` to install the dependencies
