@@ -1,7 +1,6 @@
 # Lab 1: Deploy TiDB Cluster on AWS EKS
 
-This lab deploys a TiDB cluster on an AWS EKS. The deployment process is automated with Pulumi, which is a popular
-infrastructure as code (IaC) framework.
+This lab deploys a TiDB cluster on an AWS EKS. The TiDB cluster is managed by TiDB-Operator, and the deployment process is automated with Pulumi.
 
 <!-- TOC -->
 * [Lab 1: Deploy TiDB Cluster on AWS EKS](#lab-1-deploy-tidb-cluster-on-aws-eks)
