@@ -14,7 +14,7 @@
 
 ## Create Your Own GitHub Repository
 
-Create a new GitHub repository base on [this template](https://github.com/vldbss-2023/lab1-deploy-tidb-cluster-on-aws-eks)
+Create a new GitHub repository base on [this template](https://github.com/vldbss-2023/lab1-deploy-tidb-cluster-on-aws-eks).
 
 1. Create your own lab1 repository by clicking the green button
    ![use_template](../.imgs/use_template.png)
@@ -52,14 +52,14 @@ sample values.
 ```bash
 $ aws configure
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE # <-- Replace with your own access key
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # <-- Replace with your own secret key
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # <-- Replace with your own secret access key
 Default region name [None]: ap-southeast-1
 Default output format [None]: yaml
 ```
 
 ## Install `pulumi`
 
-Pulumi is an open-source infrastructure as code software platform that helps developers safely and predictably create, manage, and improve infrastructure.
+Pulumi is an open-source infrastructure as code (IaC) platform that helps developers safely and predictably create, manage, and improve infrastructure.
 
 https://www.pulumi.com/docs/get-started/install/
 
@@ -67,7 +67,7 @@ https://www.pulumi.com/docs/get-started/install/
 
 Helm is a tool that automates the creation, packaging, configuration, and deployment of Kubernetes applications.
 
-> A.K.A., A lightweight alternative to Pulumi.
+> A.K.A., A lightweight alternative to Pulumi on Kubernetes.
 
 ```bash
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3

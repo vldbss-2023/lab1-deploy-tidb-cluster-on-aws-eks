@@ -11,7 +11,7 @@
 
 ## What is TiDB Slow-log?
 
-TiDB Slow-log is a feature of TiDB that records SQL statements that take longer than a certain threshold to execute. This information can be used to identify and troubleshoot slow queries.
+**TiDB Slow-log** is a feature of TiDB that records SQL statements that take longer than a certain threshold to execute. This information can be used to identify and troubleshoot slow queries.
 
 TiDB slow log tracks queries exceeding a defined execution time threshold to provide critical insights into system performance that can be used for optimization.
 
@@ -19,9 +19,9 @@ Please refer to: https://docs.pingcap.com/tidb/stable/dashboard-slow-query and h
 
 ## Why We Need to Adjust Slow-Log Threshold?
 
-- To control the amount of data that is logged: The slow-log threshold determines how long a query must take before it is logged. If you set the threshold too low, you will generate a lot of slow-log data. If you set the threshold too high, you might miss slow queries that are causing performance problems.
-- To focus on specific types of slow queries: The slow-log can be used to log different types of slow queries, such as queries that are using inefficient indexes or that are performing unnecessary joins. If you are only interested in a specific type of slow query, you can set the slow-log threshold to only log those types of queries.
-- To meet regulatory requirements: Some regulations require that all slow queries be logged. If you are subject to these regulations, you will need to set the slow-log threshold to a low value.
+- To control **the amount of data that is logged**: The slow-log threshold determines how long a query must take before it is logged. If you set the threshold too low, you will generate a lot of slow-log data. If you set the threshold too high, you might miss slow queries that are causing performance problems.
+- To focus on **specific types of slow queries**: The slow-log can be used to log different types of slow queries, such as queries that are using inefficient indexes or that are performing unnecessary joins. If you are only interested in a specific type of slow query, you can set the slow-log threshold to only log those types of queries.
+- To meet **read business workload** requirements: Business workload varies from company to company. For example, some companies may require that the response time of read requests be less than 1 second. In this case, you can set the slow-log threshold to 1 second to ensure that the slow-log can record all read requests that take longer than 1 second to execute.
 
 ## How to Config Slow-Log Threshold?
 
@@ -36,23 +36,27 @@ The 2nd way is recommended, because it is persistent and will not be affected by
 
 In a distributed database like TiDB, there are some types of SQL queries that tend to run slower and are more likely to show up in the slow query log:
 
-- Large table scans - Queries that need to scan large amounts of data across many nodes. This adds network overhead.
-- Expensive joins - Joins that require shuffling large amounts of data across the network between nodes. Hash joins tend to be slower.
-- Skewed data - Queries hitting regions of skewed data concentrated in few nodes need coordination.
-- Clustered index writes - Writes to clustered indices which incur overhead to reorganize data.
-- High concurrence writes - Contention and conflicts on writes to hot key ranges that require coordination.
-- Data skews - Queries hitting hotspot regions with disproportionate load imbalance slower execution.
-- Complex queries - Queries with large number of operators or transformations are compute intensive.
-- Unoptimized indexes - Missing indexes or incorrect index selection forces full table scans.
-- Large sorts - Queries requiring sorting large data sets consume excessive memory and CPU.
-- Unoptimized SQL - SQL that lacks optimization for the distributed environment.
+- **Large table scans** - Queries that need to scan large amounts of data across many nodes. This adds network overhead.
+- **Expensive joins** - Joins that require shuffling large amounts of data across the network between nodes. Hash joins tend to be slower.
+- **Skewed data** - Queries hitting regions of skewed data concentrated in few nodes need coordination.
+- **Clustered index writes** - Writes to clustered indices which incur overhead to reorganize data.
+- **High concurrence writes** - Contention and conflicts on writes to hot key ranges that require coordination.
+- **Data skews** - Queries hitting hotspot regions with disproportionate load imbalance slower execution.
+- **Complex queries** - Queries with large number of operators or transformations are compute intensive.
+- **Unoptimized indexes** - Missing indexes or incorrect index selection forces full table scans.
+- **Large sorts** - Queries requiring sorting large data sets consume excessive memory and CPU.
 
-Tuning these types of queries through index optimization, SQL rewrites, shard pruning and synchronization improvements can help reduce slow queries in a distributed database.
+For more details, please refer to: https://docs.pingcap.com/tidb/dev/sql-tuning-overview.
 
 ## [20 Scoring Points] What You Could Do?
 
-- (5 points) Adjust slow-log threshold via Pulumi and TiDB Operator
-- (10 points) Design several SQL Statements whose execution duration is larger than configured slow-log threshold
-- (5 points) Execute these SQL Statements and monitor slow queries page of TiDB Dashboard to see whether the newly configured threshold takes effect
+- (5 points) Adjust slow-log threshold via Pulumi and TiDB Operator. The threshold should be larger than **5000 ms**.
+- (10 points) Design several SQL Statements whose execution duration is larger than configured slow-log threshold.
+- (5 points) Execute these SQL Statements and monitor slow queries page of TiDB Dashboard to see whether the newly configured threshold takes effect.
 
+Show your SQL Statements and screenshots of slow queries page in your report.
+
+Example:
+
+![slow-queries](../.imgs/slow_query_example.png)
 

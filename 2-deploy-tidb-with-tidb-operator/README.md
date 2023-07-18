@@ -32,22 +32,29 @@ $ pulumi stack select default -c # Select the `default` stack.
 
 ## About Operator Pattern
 
-CRDs (Custom Resource Definitions) along with Operators provide a powerful way to extend Kubernetes and manage complex stateful applications.
+**CRDs** (Custom Resource Definitions) along with **Operators** provide a powerful way to extend Kubernetes and manage complex stateful applications.
 
 ### What is CRD?
 
+> - Think of a Custom Resource Definition (CRD) as a Class in Java and the Custom Resource (CR) as an instance of that class.
+> - Think of a CRD as a table in a database and the CR as a row in that table.
+> - Think of a CRD as a struct type in Go and the CR as an instance value of that struct.
+
 ![kubernetes_resource_definition](../.imgs/kubernetes_resource_definition.png)
 
-In Kubernetes, a Custom Resource Definition (CRD) is a Kubernetes object that defines the schema for a custom resource. The schema defines the name, type, and properties of the custom resource.
+In Kubernetes, a Custom Resource Definition (CRD) is a Kubernetes object that defines the **schema** for a custom resource. The schema defines the name, type, and properties of the custom resource.
 Once a CRD is created, custom resources of that type can be created, updated, and deleted using the Kubernetes API. Custom resources can be used to represent any type of object, such as a database, a service, or a virtual machine.
 Custom resources are a powerful way to extend the capabilities of Kubernetes. They can be used to manage any type of object that is not natively supported by Kubernetes.
 
 ### What is Operator?
 
+> - Think of an Operator as a thread in Java, which manages the lifecycle of a CR.
+> - Think of an Operator as a backend application executing SQL to a database. It performs CRUD operations on CR records.
+
 Operators are software extensions to Kubernetes that use custom resources to manage applications and their components.
 
 At first, there is Kubernetes, which is capable of scaling and being usable in extremely diverse contexts and applications.
-To **do more complex things**, capability of Kubernetes must be extended and more sophisticated automations must be created,
+To **do more complex things**, capability of Kubernetes must be **extended** and more sophisticated automations must be created,
 suited to individual applications and their specific domain of action.
 This is where the Operators come in.
 
@@ -55,30 +62,30 @@ This is where the Operators come in.
 
 ![kubernetes_control](../.imgs/kubernetes_control.png)
 
-- User install TiDB Operator and TiDB Cluster CRD to Kubernetes.
-- User creates a TiDB Cluster Custom Resource (CR) to Kubernetes.
-- The operator watches for changes to the CR.
-- If the operator detects that the database is not in the desired state, it will take action to reconcile the state.
+- User **install** TiDB Operator and TiDB Cluster CRD to Kubernetes.
+- User creates a **`TiDBCluster` Custom Resource (CR)** to Kubernetes.
+- The operator **watches** for changes to the CR.
+- If the operator detects that the `TiDBCluster` CR is not in the desired state, it will take action to **reconcile** the state.
 - This may involve creating new database pods, updating existing database pods, or deleting database pods.
 - The operator continues to monitor the database and take action as needed to ensure that the database is always in the desired state.
 
 ### How Does Operator Work?
 
-Operators in Kubernetes are essentially customized Kubernetes controllers that encapsulate operational knowledge to manage the lifecycle of complex stateful applications.
+Operators in Kubernetes are essentially **customized Kubernetes controllers** that encapsulate operational knowledge to manage the lifecycle of complex stateful applications.
 
-Reconcile loops in controllers make Kubernetes a declarative system where you focus on specifying desired state via YAML while controllers ensure actual state matches it.
+**Reconcile loops** in controllers make Kubernetes a declarative system where you focus on specifying desired state via YAML while controllers ensure actual state matches it.
 
 #### Reconcile Pattern
 
 ![reconcile_pattern](../.imgs/reconcile_pattern.png)
 
-The term "Reconcile" comes from the implementation of Kubernetes controllers. It is a commonly used asynchronous resource management design pattern, used to decouple the contradictory processes of "user waiting for resources" and "slow resource creation". It has three core components:
+The term "**Reconcile**" comes from the implementation of Kubernetes controllers. It is a commonly used **asynchronous resource management design pattern**, used to decouple the contradictory processes of "user waiting for resources" and "slow resource creation". It has three core components:
 
-- API server that handles synchronous requests
-- Reliable resource metadata storage
-- Worker that consumes requests and directly touches resources (the worker can have caches and working queues internally)
+- **API server** that handles synchronous requests
+- Reliable resource **metadata storage**
+- **Worker** that consumes requests and directly touches resources (the worker can have caches and working queues internally)
 
-The Reconcile pattern allows the API server to immediately respond to user requests for resources. The actual asynchronous creation of the resources is handled in the background by the worker components. This prevents users from having to wait for resources to finish creating before getting a response. The reliable metadata storage acts as coordination point between API server and workers to ensure eventual consistency.
+The Reconcile pattern allows the API server to immediately respond to user requests for resources. The actual asynchronous creation of the resources is handled in the background by the worker components. This prevents users from having to wait for resources to finish creating before getting a response. The reliable metadata storage acts as coordination point between API server and workers to ensure **eventual consistency**.
 
 ## Deploy TiDB Operator and TiDB Cluster via Pulumi
 
@@ -103,24 +110,27 @@ Updating (default):
 
 In summary, TiUP offers simplicity while TiDB Operator provides cloud-native portability, automation, and ecosystem leverage on Kubernetes.
 
-TiUP (Bare Metal):
+- TiUP (Bare Metal):
 
-- Simpler installation - Single binary to directly deploy TiDB on servers. No need for Kubernetes.
-- Bare metal performance - No overhead from containerization so can achieve lower latency and higher throughput.
-- Targeted for TiDB - Specialized for TiDB deployments and workflows. Not a general Kubernetes app manager.
-- Limited portability - Tightly coupled to specific bare metal servers. Difficult to migrate or burst to cloud.
-- Manual management - Scaling, upgrades, repairs require human intervention. Lacks automated recoveries.
+  Pros:
 
-TiDB Operator (Kubernetes):
+  - **Simpler installation** - Single binary to directly deploy TiDB on servers. No need for Kubernetes.
+  - **Bare metal performance** - No overhead from containerization so can achieve lower latency and higher throughput.
+  - Targeted for TiDB - Specialized for TiDB deployments and workflows. Not a general Kubernetes app manager.
 
-- True cloud-native - Fully leverages Kubernetes concepts like pods, services, deployments, configmaps.
-- Broad ecosystem - Benefits from all Kubernetes supporting tools and services for observability, security, RBAC, pipelines.
-- Automated operations - Handles scaling, failovers, upgrades, repairs automatically through Kubernetes.
-- Storage integration - Easy to integrate cloud storage like PV/PVC abstractions.
-- Portable - Can run on any Kubernetes distro - on-prem, public cloud, bare metal, edge.
-- Standard tooling - Uses kubectl, a standard skill. Kubernetes YAMLs for configuration.
-- Loose coupling - TiDB cluster abstracted from underlying infrastructure for portability.
-- Microservices friendly - Kubernetes is ideal platform for microservices architectures.
+  Cons:
+
+  - **Limited portability** - Tightly coupled to specific bare metal servers. Difficult to migrate or burst to cloud.
+  - **Manual management** - Scaling, upgrades, repairs require human intervention. Lacks automated recoveries.
+
+- TiDB Operator (Kubernetes):
+
+  Pros:
+  - **True cloud-native** - Fully leverages Kubernetes concepts like pods, services, deployments, configmaps.
+  - **Broad ecosystem** - Benefits from all Kubernetes supporting tools and services for observability, security, RBAC, pipelines.
+  - **Automated operations** - Handles scaling, failovers, upgrades, repairs automatically through Kubernetes.
+  - **Storage integration** - Easy to integrate cloud storage like PV/PVC abstractions.
+  - **Microservices friendly** - Kubernetes is ideal platform for microservices architectures.
 
 ## [25 Scoring Point] Wait for TiDB Cluster Ready
 

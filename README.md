@@ -1,6 +1,6 @@
 # Lab 1: Deploy TiDB Cluster on AWS EKS
 
-This lab deploys a TiDB cluster on an AWS EKS. The TiDB cluster is managed by TiDB-Operator, and the deployment process is automated with Pulumi.
+This lab deploys a **TiDB cluster** on an **AWS EKS**. The TiDB cluster is managed by **TiDB-Operator**, and the deployment process is automated with **Pulumi**.
 
 <!-- TOC -->
 * [Lab 1: Deploy TiDB Cluster on AWS EKS](#lab-1-deploy-tidb-cluster-on-aws-eks)
@@ -13,11 +13,11 @@ This lab deploys a TiDB cluster on an AWS EKS. The TiDB cluster is managed by Ti
 
 ## Introduction
 
-Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale, as your business needs change.
+**Cloud computing** is the delivery of computing **services** -- including servers, storage, databases, networking, software, analytics, and intelligence -- over the internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale, as your business needs change.
 
-Amazon EKS is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS. Kubernetes offers automating deployment, scaling, and management of containerized applications. Adopting Kubernetes  ultimately accelerates business and saves costs under relatively high application workload.
+**Amazon EKS** is a managed Kubernetes service that makes it easy for you to run **Kubernetes** on AWS. Kubernetes offers automating deployment, scaling, and management of containerized applications.
 
-TiDB is an open-source distributed SQL database that supports HTAP workloads. It provides users with a one-stop database solution, and helps improve scalability, availability and reliability for users' data storage systems.
+**TiDB** is an open-source distributed SQL database that supports HTAP workloads. It provides users with a one-stop database solution, and helps improve scalability, availability and reliability for users' data storage systems.
 
 When deploying TiDB clusters on AWS EKS, users can gain all features provided by TiDB, while leverage the benefits of operating TiDB clusters on managed Kubernetes services.
 
@@ -38,7 +38,7 @@ When deploying TiDB clusters on AWS EKS, users can gain all features provided by
 
 ## Syllabus
 
-> 100 basic points + 20 bonus points.
+> 100 basic points + 20 bonus points = 120 total points.
 
 - Step 0: Install Dependencies [`0-install-dependencies`](./0-install-dependencies/README.md)
 
@@ -50,14 +50,13 @@ When deploying TiDB clusters on AWS EKS, users can gain all features provided by
    Operator [`4-scale-up-tidb-cluster-with-tidb-operator`](./4-scale-up-tidb-cluster-with-tidb-operator/README.md)
 5. (10 points) Cleanup: Destroy the EKS cluster [`finished-destroy-the-eks-cluster-via-pulumi`](./1-create-an-eks-cluster/README.md#do-not-execute-this-step-until-lab-1-finished-destroy-the-eks-cluster-via-pulumi)
 
-- (20 bonus points) Bonus: Config the TiDB slow-log threshold and update the cluster with Pulumi code [[bonus]config-slow-log-threshold](./[bonus]config-slow-log-threshold/README.md)
-
+- (20 bonus points) Bonus: Config the TiDB slow-log threshold and update the cluster with Pulumi [[bonus]config-slow-log-threshold](./[bonus]config-slow-log-threshold/README.md)
 
 ---
 
 ## AWS billing price
 
-This lab will incur charges under the aws account, described in detail at:
+This lab will incur charges under the AWS account, described in detail at:
 
 - New EKS cluster control plane, **_1_** cluster x **_0.10_** USD per hour
 - Two EKS worker EC2 `t2.medium` instances, **_2_** instances * **_0.0464_** USD per hour
