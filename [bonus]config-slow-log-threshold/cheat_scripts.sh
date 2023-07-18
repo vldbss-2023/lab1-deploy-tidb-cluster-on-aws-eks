@@ -17,3 +17,6 @@ do
    pd=$(( $i * 73 / $total ))
    printf "\r%3d.%1d%% %.${pd}s" $(( $i * 100 / $total )) $(( ($i * 1000 / $total) % 10 )) $pstr
 done
+
+# How to make up a SQL statement which takes very long time to complete, base on the tables created above?
+# Pro tips: cross join.
