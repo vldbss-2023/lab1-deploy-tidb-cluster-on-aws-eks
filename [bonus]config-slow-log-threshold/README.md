@@ -38,11 +38,7 @@ In a distributed database like TiDB, there are some types of SQL queries that te
 
 - **Large table scans** - Queries that need to scan large amounts of data across many nodes. This adds network overhead.
 - **Expensive joins** - Joins that require shuffling large amounts of data across the network between nodes. Hash joins tend to be slower.
-- **Skewed data** - Queries hitting regions of skewed data concentrated in few nodes need coordination.
-- **Clustered index writes** - Writes to clustered indices which incur overhead to reorganize data.
-- **High concurrence writes** - Contention and conflicts on writes to hot key ranges that require coordination.
 - **Data skews** - Queries hitting hotspot regions with disproportionate load imbalance slower execution.
-- **Complex queries** - Queries with large number of operators or transformations are compute intensive.
 - **Unoptimized indexes** - Missing indexes or incorrect index selection forces full table scans.
 - **Large sorts** - Queries requiring sorting large data sets consume excessive memory and CPU.
 
