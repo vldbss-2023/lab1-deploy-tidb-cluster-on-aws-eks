@@ -10,8 +10,6 @@
     * [Config AWS Credentials](#config-aws-credentials)
   * [Install `pulumi`](#install-pulumi)
   * [Install Helm](#install-helm)
-    * [Download](#download)
-    * [Init](#init)
 <!-- TOC -->
 
 ## Create Your Own GitHub Repository
@@ -71,16 +69,8 @@ Helm is a tool that automates the creation, packaging, configuration, and deploy
 
 > A.K.A., A lightweight alternative to Pulumi.
 
-### Download
-
 ```bash
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 $ chmod 700 get_helm.sh
 $ ./get_helm.sh
-```
-
-### Init
-
-```bash
-$ helm init --client-only
 ```
