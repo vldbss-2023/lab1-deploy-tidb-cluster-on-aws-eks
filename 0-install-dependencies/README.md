@@ -39,7 +39,7 @@ $ nvm install 16
 ### Install AWS CLI
 
 - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-- `[aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)`:
+- [`aws-iam-authenticator`](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html):
   Amazon EKS uses IAM to provide secure authentication to your Kubernetes cluster.
 
 ### Config AWS Credentials
