@@ -5,6 +5,7 @@ This lab deploys a **TiDB cluster** on an **AWS EKS**. The TiDB cluster is manag
 <!-- TOC -->
 * [Lab 1: Deploy TiDB Cluster on AWS EKS](#lab-1-deploy-tidb-cluster-on-aws-eks)
   * [Introduction](#introduction)
+    * [About TiDB Cloud](#about-tidb-cloud)
   * [Learning Objectives](#learning-objectives)
   * [Pre-Requisites](#pre-requisites)
   * [Syllabus](#syllabus)
@@ -20,6 +21,14 @@ This lab deploys a **TiDB cluster** on an **AWS EKS**. The TiDB cluster is manag
 **TiDB** is an open-source distributed SQL database that supports HTAP workloads. It provides users with a one-stop database solution, and helps improve scalability, availability and reliability for users' data storage systems.
 
 When deploying TiDB clusters on AWS EKS, users can gain all features provided by TiDB, while leverage the benefits of operating TiDB clusters on managed Kubernetes services.
+
+### About TiDB Cloud
+
+TiDB Cloud is a fully-managed Database-as-a-Service (DBaaS) that brings TiDB, an open-source Hybrid Transactional and Analytical Processing (HTAP) database, to your cloud. TiDB Cloud offers an easy way to deploy and manage databases to let you focus on your applications, not the complexities of the databases. You can create TiDB Cloud clusters to quickly build mission-critical applications on Google Cloud Platform (GCP) and Amazon Web Services (AWS).
+
+![img.png](.imgs/tidb_cloud.png)
+
+**At PingCAP, we build TiDB Cloud based on technologies covered in this Lab 1!**
 
 ## Learning Objectives
 
