@@ -26,9 +26,11 @@ TiDB is an open-source, distributed SQL database that supports Hybrid Transactio
 
 ### Why TiDB Cluster (Compare to A MySql Instance)?
 
-![tidb_mysql_1](../.imgs/tidb_mysql_1.png)
+Scalability
 
 ![tidb_mysql_2](../.imgs/tidb_mysql_2.png)
+
+High-performance analytics with strong consistency and less technical complexity
 
 ## List All Services Related to TiDB Cluster
 
